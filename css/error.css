@@ -1,0 +1,32 @@
+
+  :root {
+    --colour-body-background: #2e2827;
+    --font: 'Oswald', sans-serif;
+  }
+  
+  *, :after, :before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+      padding-top: 100px;
+    background: var(--colour-body-background);
+    font-family: var(--font);
+  }
+
+  h1 {
+    text-align: center;
+    color: #d6781f;
+    letter-spacing: 0.1rem;
+    font-size: 3rem;
+  }
+
+  @media only screen and (max-width: 800px) {
+      h1{
+          font-size: 2rem;
+      }
+      
+  }
+

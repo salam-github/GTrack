@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/groupiestyle.css">
+    <title>Groupie Tracker</title>
+</head>
+
+<body>
+    <span>Groupie Tracker</span><br>
+
+    <ol class="articles">
+        {{ range . }}      
+        <li class="articles__article" style="--animation-order:1">
+     
+            <a href=/artist/{{.Name}} class="articles__link" >
+                <div class="articles__content">
+                    <img class="articles__img" src={{.Image}} alt="band">
+                    <div class="title">{{.Name}}</div>
+                </div>
+            </a>
+        </li>
+        {{end}}
+    </ol>
+</body>
+
+</html>

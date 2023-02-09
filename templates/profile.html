@@ -1,0 +1,75 @@
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta authors="Salam Foon & lorem ipsum">
+    <link rel="stylesheet" type="text/css" href="../css/profile.css">
+    <title>Groupie Tracker: {{.Name}}</title>
+</head>
+
+<body>
+    <div class="test">
+        <div class="back"><a href="../" class="btn btn-one"> <span>BACK</span> </a></div>
+
+    </div>
+
+    <div class="title">
+        <h2>{{.Name}}</h2>
+    </div>
+
+
+
+
+    <div class="wrapper">
+        <div class="profile">
+            <img class="profile__img" src={{.Image}} alt="band">
+        </div>
+
+
+        <div class="text">
+
+            <h3>Founded:</h3>
+            <p>{{.CreationDate}}</p>
+
+            <h3>First Album: </h3>
+            <p>{{.FirstAlbum}}</p>
+            <h3>Members:</h3>
+            <ul>
+                {{ range .Members }}
+                <li>{{.}}</li>
+                {{end}}
+            </ul>
+        </div>
+
+
+        <div class="concerts">
+            <h3>Concerts:</h3>
+            {{range $key, $value := .Relations}}
+            <table>
+                <tr class="location">
+                    <td><a href="#{{$key}}"><u>&#9660 {{$key}}</u></a></td>
+
+                <tr>
+                <tr class="date" id="{{$key}}">
+                    <td>
+                        {{range $value}}
+                        <ul>
+                            <li>
+                                {{.}}
+                            </li>
+                        </ul>
+                        {{end}}
+                    </td>
+                </tr>
+                {{end}}
+                <table>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
